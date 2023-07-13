@@ -5,11 +5,10 @@ describe('Real World App', () => {
     beforeEach(() => {
         cy.login('Tavares_Barrows', 's3cret');
         cy.visit('/');
-    })
-    context('Veamos', () => {
+    });
+
+    context('Login', () => {
     it('Trying to Sign in', () => {
-        // cy.visit('/');
-        
 
         // Check Page Elements
         cy.get('[data-test="sidenav"]').as('navegador').should('be.visible');
@@ -20,12 +19,19 @@ describe('Real World App', () => {
         cy.get('@burgerMenu').click();
         // Check Menu is not present
         cy.get('@navegador').should('exist');
+        cy.wait(5000);
     })
 });
-    context('Otra vez', () => {
-        it('Again', () => {
+    context('Mine tab', () => {
+        it('Navegar a tab Mine', () => {
             // cy.visit('/');
             cy.get('[data-test="nav-personal-tab"]').click();
+        })
+    });
+
+    context('Log out', () => {
+        it('Des-loggearse', () => {
+            cy.get('[data-test="sidenav-signout"]').click();
         })
     })
 });
