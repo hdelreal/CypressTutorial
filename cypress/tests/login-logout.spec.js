@@ -1,9 +1,11 @@
+import { logger } from "../utils/consts";
+
 describe('Real World App', () => {
     // Tavares_Barrows
     // s3cret
 
     beforeEach(() => {
-        cy.login('Tavares_Barrows', 's3cret');
+        cy.login(logger.username, logger.password);
         cy.visit('/');
     });
 
@@ -26,6 +28,7 @@ describe('Real World App', () => {
         it('Navegar a tab Mine', () => {
             // cy.visit('/');
             cy.get('[data-test="nav-personal-tab"]').click();
+            cy.get('[data-test="transaction-list"]').should('exist');
         })
     });
 
