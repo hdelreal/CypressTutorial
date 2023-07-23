@@ -1,13 +1,13 @@
+import { logger } from "../utils/consts";
+
 describe('Real World App', () => {
-    // Tavares_Barrows
-    // s3cret
 
     beforeEach(() => {
-        cy.login('Tavares_Barrows', 's3cret');
+        cy.login(logger.username, logger.password);
         cy.visit('/');
     })
     context('Veamos', () => {
-        it('Trying to Sign in', () => {        
+        it('Trying to Sign in', () => {       
 
             // Check Page Elements
             cy.get('[data-test="sidenav"]').as('navegador').should('be.visible');

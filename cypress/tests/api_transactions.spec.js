@@ -1,6 +1,8 @@
+import { logger } from "../utils/consts";
+
 describe('API Testing', () => {
     beforeEach(() => {
-        cy.requestApi('Tavares_Barrows', 's3cret');
+        cy.requestApi(logger.username, logger.password);
     });
 
     it ('Obtener el segundo elemento', () => {

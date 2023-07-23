@@ -1,8 +1,6 @@
 import { logger } from "../utils/consts";
 
 describe('Real World App', () => {
-    // Tavares_Barrows
-    // s3cret
 
     beforeEach(() => {
         cy.login(logger.username, logger.password);
